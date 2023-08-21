@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+
+#flask-backend
+  flaskbackend:
+    build: ./flask_backend
+    container_name: flaskbackend
+
+    ports:
+      - "5555:5555"
+    devices:
+      - '/dev/video0:/dev/video0'
+    networks:
+      - video_recording
+
+networks:
+  video_recording:
